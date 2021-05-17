@@ -1,0 +1,27 @@
+{% extends 'blog/basic.html' %}
+{% block style %} {% endblock style %}
+{% block content %} {% endblock content %}
+{% block body %}
+
+
+
+{% for post in posts %}
+
+
+  <div class="container my-3" align="center">
+    <h2 class="blog-post-title">Title:{{post.title}}</h2>
+    <img src="{{post.image.url}}" width="500"/>
+    <p class="blog-post-meta">{{post.timestamp}} by <a href="#">{{post.author}}</a></p>
+    <blockquote class="blockquote">
+      <p>{{post.content}}</p>
+      <footer class="blockquote-footer">From World News website</footer>
+    </blockquote>
+    <hr>
+  </div>
+
+
+
+{% endfor %}
+
+
+{% endblock body %}

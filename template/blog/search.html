@@ -1,0 +1,39 @@
+{% extends 'blog/basic.html' %}
+{% block style %}{% endblock style %}
+{% block content %} {% endblock content %}
+{% block body %}
+
+
+
+
+  <section class="text-center container">
+    <div class="row py-lg-3">
+      <div class="col-lg-6 col-md-8 mx-auto">
+        <h1 class="fw-light">World News</h1>
+        <p class="lead text-muted">Welcome to World News.Here you will find all kind of information about this world what is happening.Feel free to share this information. </p>
+      </div>
+    </div>
+  </section>
+
+<div class="row">
+  {% for post in allpost %}
+    <div class="col-sm">
+      <div class="card" style="width: 20rem;">
+        <img src="{{post.image.url}}" class="card-img-top">
+          <div class="card-body">
+            <h5 class="card-title">{{post.title|truncatechars:20}}</h5>
+            <p class="card=text">{{post.content|truncatechars:50}}</p>
+            <a href="/blog/{{post.title}}" target="_blank" class="btn btn-primary">Read More</a>
+            <small class="text-muted">{{post.timestamp|truncatechars:10}}}</small>
+        </div>
+      </div>
+    </div>
+  {% endfor %}
+</div>
+
+
+
+
+
+
+{% endblock body %}
